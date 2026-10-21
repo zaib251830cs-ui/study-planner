@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Study Planner</title>
+<script>(function(){var t=null;try{t=JSON.parse(localStorage.getItem("sp_theme"))}catch(e){}if(t!=="light"&&t!=="dark"){t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)})()</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-dash" viewBox="0 0 24 24"><path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"/></symbol>
+<symbol id="i-task" viewBox="0 0 24 24"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></symbol>
+<symbol id="i-time" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5zM20 17v5H6.5A2.5 2.5 0 0 1 4 19.5"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+<symbol id="i-ok" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+</defs></svg>
+<div id="app" class="hide"><aside class="side"><div class="brand"><span class="logo"><svg class="ic"><use href="#i-book"/></svg></span>Study Planner</div><div id="sn"></div><div class="foot"><button class="tgl" data-a="theme" data-l="1" style="margin-bottom:10px"></button><div style="margin-bottom:10px">Signed in as <b id="un" style="color:#fff"></b></div><button data-a="out" style="padding:9px 12px">Log out</button></div></aside>
+<main><div class="main">
+<div class="top"><span class="logo"><svg class="ic"><use href="#i-book"/></svg></span><b style="font-size:17px;letter-spacing:-.3px">Study Planner</b><button class="btn ghost tgl" data-a="theme" style="margin-left:auto;padding:7px 10px"></button><button class="btn ghost" data-a="out" style="margin-left:8px;padding:7px 14px">Log out</button></div>
+<div id="view"></div></div></main>
+<nav class="bar" id="bn"></nav></div>
+<div id="auth" class="authwrap"><button class="btn ghost tgl" data-a="theme" style="position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;padding:8px 10px;z-index:6"></button><div class="card authcard">
+<div class="logo"><svg class="ic"><use href="#i-book"/></svg></div><h1>Study Planner</h1><p class="sub" id="atitle">Log in to continue</p>
+<label class="mu" for="auser">Username</label><input id="auser" autocomplete="username" autocapitalize="none">
+<label class="mu" for="apass">Password</label><input id="apass" type="password" autocomplete="current-password">
+<label class="mu rem"><input type="checkbox" id="arem" checked style="width:auto">Keep me logged in</label>
+<div class="aerr" id="aerr"></div>
+<button class="btn" id="ago" style="width:100%">Log in</button>
+<button class="link" id="asw">New here? Create an account</button>
+</div></div>
+<script src="script.js"></script>
+</body></html>
